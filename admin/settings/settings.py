@@ -1,14 +1,14 @@
 # -*- coding:utf-8 -*-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os, sys
+import os
+import sys
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -20,7 +20,6 @@ SECRET_KEY = '7#s=eh&=lrna8c1ulh(_fmu2q7ert4fh994_t!#2e7$iauhpp('
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -41,7 +40,6 @@ INSTALLED_APPS = (
 )
 SITE_ID = 1
 
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,7 +51,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'users.middleware.UrlMiddelware',
 )
-
 
 ROOT_URLCONF = 'admin.urls'
 
@@ -74,7 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'admin.wsgi.application'
-
 
 # DATABASES = {
 #     'default': {
@@ -101,7 +97,6 @@ DATABASES = {
     }
 }
 
-
 LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -111,7 +106,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -128,7 +122,6 @@ EMAIL_HOST_PASSWORD = "123456"
 EMAIL_USE_TLS = False
 EMAIL_SUBJECT_PREFIX = u"[邮件]"
 
-
 # loging
 LOGGING = {
     'version': 1,
@@ -144,7 +137,7 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': '%s/error.logs'%BASE_DIR,
+            'filename': '%s/error.log' % BASE_DIR,
         },
     },
     'loggers': {
@@ -162,8 +155,8 @@ MONGO_PORT = '27017'
 
 # Redis Con
 REDSI_KWARGS_LPUSH = {
-    "host":'192.168.1.108',
-    'port':6379,
-    'db':3
+    "host": '192.168.1.108',
+    'port': 6379,
+    'db': 3
 }
 REDSI_LPUSH_POOL = None
